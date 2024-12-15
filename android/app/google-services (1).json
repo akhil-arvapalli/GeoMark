@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "928101312097",
+    "project_id": "geomask-c1faf",
+    "storage_bucket": "geomask-c1faf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928101312097:android:344a4b655d4cc6388eac20",
+        "android_client_info": {
+          "package_name": "com.example.tema2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0fOEkPYk1VtY0pWp6kn8JwfK1L5gilY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

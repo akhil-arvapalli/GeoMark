@@ -1,0 +1,72 @@
+// buildscript {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+//     dependencies {
+//         // Ensure the Gradle plugin version matches the Android Gradle Plugin in app/build.gradle
+//         classpath 'com.android.tools.build:gradle:7.3'
+//         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+//     }
+// }
+
+// allprojects {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
+
+// // Consolidate build directories for clarity and structure
+// rootProject.buildDir = "../build"
+// subprojects {
+//     project.buildDir = "${rootProject.buildDir}/${project.name}"
+//     project.evaluationDependsOn(":app")
+// }
+
+// tasks.register("clean", Delete) {
+//     delete rootProject.buildDir
+// }
+// configurations.all {
+//     resolutionStrategy.eachDependency { details ->
+//         if (details.requested.group == 'org.jetbrains.kotlin') {
+//             details.useVersion "1.8.22"
+//         }
+//     }
+// }
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.0' // Latest stable Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10" // Latest stable Kotlin plugin
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'org.jetbrains.kotlin') {
+            details.useVersion "1.8.22"
+        }
+    }
+}
